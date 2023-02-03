@@ -1,9 +1,7 @@
-import React from "react";
-
 function App() {
   return (
-    <div className="App">
-      <h1>HELLO, WORLD!</h1>
+    <div className="App bg-slate-300">
+      <h1 className="text-red-500">HELLO, WORLD!</h1>
     </div>
   );
 }
