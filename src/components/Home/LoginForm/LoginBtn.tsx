@@ -1,9 +1,9 @@
 const LoginBtn = () => {
   return (
-    <div>
+    <div className="my-1">
       <button
         type="submit"
-        className="p-2 bg-sky-500 m-2 text-base text-white font-semibold rounded-lg"
+        className="w-full p-1 bg-sky-500 text-sm text-white font-medium rounded-lg hover:bg-sky-600 hover:font-bold"
       >
         로그인
       </button>
