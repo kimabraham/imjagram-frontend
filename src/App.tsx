@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "routes/home";
 import Contents from "routes/contents";
-import Signup from "routes/accounts/signup";
+import Signup from "routes/accounts/join";
 import Footer from "routes/layout/footer";
 import { BrowserRouter } from "react-router-dom";
 import "styles/global.css";
