@@ -22,7 +22,12 @@ const PlatformJoinBtnBox = () => {
   return (
     <div className="py-2 space-y-2">
       {platformBtnInfos.map((d, i) => (
-        <PlatformJoinBtn platform={d.platform} title={d.title} icon={d.icon} />
+        <PlatformJoinBtn
+          key={i}
+          platform={d.platform}
+          title={d.title}
+          icon={d.icon}
+        />
       ))}
     </div>
   );

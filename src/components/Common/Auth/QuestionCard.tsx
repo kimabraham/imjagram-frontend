@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const QuestionDiv = ({
+const QuestionCard = ({
   question,
   anwser,
   link,
@@ -24,4 +24,4 @@ const QuestionDiv = ({
   );
 };
 
-export default QuestionDiv;
+export default QuestionCard;

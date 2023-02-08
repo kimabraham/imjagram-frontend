@@ -1,7 +1,8 @@
+import JoinInputBox from "components/Accounts/Join/JoinInputBox";
 import PlatformJoinBtnBox from "components/Accounts/Join/PlatformJoin/PlatformJoinBox";
-import QuestionDiv from "components/Common/Auth/QuestionDiv";
-import Dividing from "components/Home/Dividing";
-import Logo from "components/Home/Logo";
+import QuestionCard from "components/Common/Auth/QuestionCard";
+import Dividing from "components/Common/Dividing";
+import Logo from "components/Common/Logo";
 
 const Join = () => {
   return (
@@ -16,21 +17,9 @@ const Join = () => {
           </div>
           <PlatformJoinBtnBox />
           <Dividing />
-          <div>
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-          </div>
-          <div>
-            <span>
-              저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 Imjagram에
-              업로드했을 수도 있습니다. 더 알아보기
-            </span>
-          </div>
-          <button>가입</button>
+          <JoinInputBox />
         </div>
-        <QuestionDiv question="계정이 있으신가요?" anwser="로그인" link="/" />
+        <QuestionCard question="계정이 있으신가요?" anwser="로그인" link="/" />
       </div>
     </div>
   );
