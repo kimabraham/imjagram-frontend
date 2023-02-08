@@ -1,26 +1,53 @@
 import AuthBtn from "components/Common/Auth/AuthBtn";
 import AuthInput from "components/Common/Auth/AuthInput";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const JoinInputBox = () => {
-  const [values, setValues] = useState({
+  type VALUE = {
+    id: string;
+    password: string;
+    name: string;
+    username: string;
+  };
+
+  type RESTYPE = {
+    success: boolean;
+    msg: string;
+  };
+
+  const [values, setValues] = useState<VALUE>({
     id: "",
     password: "",
     name: "",
     username: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e: React.FormEvent<HTMLFormElement>): void => {
     const {
       currentTarget: { name, value },
     } = e;
     setValues({ ...values, [name]: value });
-    return;
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await fetch("http://localhost:4000/api/account/join", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(values),
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <AuthInput
         label="휴대폰 번호 또는 이메일 주소"
         type="text"

@@ -10,7 +10,7 @@ const AuthInput = ({
   label: string;
   type: "text" | "password";
   name: string;
-  onChange: void;
+  onChange: Function;
 }) => {
   const [isPassword, setIsPassword] = useState(type === "password");
 
