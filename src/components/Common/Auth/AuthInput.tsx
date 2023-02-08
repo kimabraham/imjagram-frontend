@@ -1,17 +1,14 @@
 import { useState } from "react";
 import "styles/Home/index.css";
 
-const AuthInput = ({
-  label,
-  type,
-  name,
-  onChange,
-}: {
+type PROPS = {
   label: string;
   type: "text" | "password";
   name: string;
   onChange: Function;
-}) => {
+};
+
+const AuthInput = ({ label, type, name, onChange }: PROPS) => {
   const [isPassword, setIsPassword] = useState(type === "password");
 
   return (

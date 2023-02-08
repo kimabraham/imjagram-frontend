@@ -1,7 +1,6 @@
 import AuthBtn from "components/Common/Auth/AuthBtn";
 import AuthInput from "components/Common/Auth/AuthInput";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const JoinInputBox = () => {
   type VALUE = {
@@ -11,11 +10,6 @@ const JoinInputBox = () => {
     username: string;
   };
 
-  type RESTYPE = {
-    success: boolean;
-    msg: string;
-  };
-
   const [values, setValues] = useState<VALUE>({
     id: "",
     password: "",
@@ -23,9 +17,7 @@ const JoinInputBox = () => {
     username: "",
   });
 
-  const navigate = useNavigate();
-
-  const handleChange = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
     const {
       currentTarget: { name, value },
     } = e;
@@ -47,7 +39,7 @@ const JoinInputBox = () => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={handleSubmit}>
       <AuthInput
         label="휴대폰 번호 또는 이메일 주소"
         type="text"
