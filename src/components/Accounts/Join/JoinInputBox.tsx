@@ -1,3 +1,4 @@
+import axios from "axios";
 import AuthBtn from "components/Common/Auth/AuthBtn";
 import AuthInput from "components/Common/Auth/AuthInput";
 import { useState } from "react";
@@ -26,16 +27,8 @@ const JoinInputBox = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await fetch("http://localhost:4000/api/account/join", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(values),
-    })
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
+    const res = await axios.post(`http://localhost:4000/auth`, values);
+    console.log(res.data);
   };
 
   return (
