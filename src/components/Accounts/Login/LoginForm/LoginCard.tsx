@@ -11,7 +11,7 @@ const LoginCard = () => {
       <LoginForm />
       <Dividing />
       <PlatformLoginBox />
-      <LinkText content="비밀번호를 잊으셨나요?" link="/accounts/password" />
+      <LinkText content="비밀번호를 잊으셨나요?" link="/account/password" />
     </div>
   );
 };

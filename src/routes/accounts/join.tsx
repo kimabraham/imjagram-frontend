@@ -6,8 +6,8 @@ import Logo from "components/Common/Logo";
 
 const Join = () => {
   return (
-    <div className="flex justify-center">
-      <div className="space-y-2">
+    <div className="flex justify-center h-[calc(100vh-100px)]">
+      <div className="space-y-2 self-center">
         <div className="w-[350px] border-[1px] bg-white border-neutral-300 p-5">
           <Logo />
           <div className="p-2 text-center">

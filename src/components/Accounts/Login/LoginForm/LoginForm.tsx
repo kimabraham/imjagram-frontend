@@ -3,8 +3,8 @@ import AuthBtn from "../../../Common/Auth/AuthBtn";
 
 const LoginForm = () => {
   return (
-    <div className="flex flex-col">
-      <form className="flex flex-col">
+    <div>
+      <form className="flex flex-col w-full">
         <AuthInput
           label="전화번호,사용자 이름 또는 이메일"
           type="text"
