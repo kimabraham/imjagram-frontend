@@ -9,13 +9,17 @@ const LoginForm = () => {
           label="전화번호,사용자 이름 또는 이메일"
           type="text"
           name="id"
+          err={() => console.log(`hi`)}
           onChange={() => console.log(`hi`)}
+          onBlur={() => console.log(`hi`)}
         />
         <AuthInput
           label="비밀번호"
           type="password"
           name="password"
+          err={() => console.log(`hi`)}
           onChange={() => console.log(`hi`)}
+          onBlur={() => console.log(`hi`)}
         />
         <AuthBtn title="로그인" />
       </form>

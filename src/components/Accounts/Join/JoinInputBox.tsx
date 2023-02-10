@@ -25,6 +25,19 @@ const JoinInputBox = () => {
     setValues({ ...values, [name]: value });
   };
 
+  const handleCheckErr = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<boolean> => {
+    const {
+      currentTarget: { name, value },
+    } = e;
+    const res = await axios.post(`http://localhost:4000/auth/validate`, {
+      name,
+      value,
+    });
+    return res.data.ok;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await axios.post(`http://localhost:4000/auth`, values);
@@ -32,25 +45,38 @@ const JoinInputBox = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} autoComplete="off">
       <AuthInput
         label="휴대폰 번호 또는 이메일 주소"
         type="text"
-        name="id"
+        name="userId"
         onChange={handleChange}
+        onBlur={handleCheckErr}
+        err={handleCheckErr}
       />
-      <AuthInput label="성명" type="text" name="name" onChange={handleChange} />
+      <AuthInput
+        label="성명"
+        type="text"
+        name="name"
+        onChange={handleChange}
+        onBlur={handleCheckErr}
+        err={handleCheckErr}
+      />
       <AuthInput
         label="사용자 이름"
         type="text"
-        name="username"
+        name="userName"
         onChange={handleChange}
+        onBlur={handleCheckErr}
+        err={handleCheckErr}
       />
       <AuthInput
         label="비밀번호"
         type="password"
         name="password"
         onChange={handleChange}
+        onBlur={handleCheckErr}
+        err={handleCheckErr}
       />
       <div className="py-4">
         <p className="text-center text-xs leading-snug text-neutral-400">

@@ -15,6 +15,8 @@ const LoginError = () => {
             type="text"
             name="id"
             onChange={() => console.log(`hi`)}
+            onBlur={() => console.log(`hi`)}
+            err={() => console.log(`hi`)}
           />
           <AuthBtn title="로그인 링크 보내기" />
           <Dividing />
